@@ -14,12 +14,14 @@ def main(screen):
     #screen = curses.initscr()
     minuten_time = int(sys.argv[1]) # minuten die man als commando in der console weitergibt
     start_zeit = datetime.now()
-    endzeit = start_zeit + timedelta(seconds=minuten_time)
+    endzeit = start_zeit + timedelta(minutes=minuten_time)
     wav_obj = sa.WaveObject.from_wave_file("sounds/Temple.wav")
 
     while True:
         time.sleep(1)
         screen.clear()
+        noch_zu_machen = endzeit - datetime.now()
+        print(noch_zu_machen)
         if datetime.now() > endzeit:
             print("Timer wurde erreicht")
             curses.beep()
@@ -28,7 +30,7 @@ def main(screen):
             play_obj.wait_done()
             break
         else:
-            screen.addstr(0, 0, datetime.now().strftime("%H:%M:%S"), curses.A_BOLD)
+            screen.addstr(0, 0, str(noch_zu_machen), curses.A_BOLD)
             #print(datetime.now())
             screen.refresh()
 

@@ -10,3 +10,6 @@ simpleaudio = "*"
 
 [requires]
 python_version = "3.8.6"
+
+[scripts]
+timer = "python timer.py"
