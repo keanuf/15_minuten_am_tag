@@ -11,4 +11,14 @@ Kurze informationen zu den 15 minuten Programmen
 
 
 Ideen:
- 
+- Sockets anschauen
+- webscapping anschauen
+- ein paar API's anzapfen und spielen damit 
+- pygame + pygame script anschauen
+- mail imap anschauen
+- machine learning eventuell auch mit jupiter notebook
+
+
+Ausarbeitung der Ideen:
+- Timer
+	Fast fertigestellt noch in die PATH Variable unterbringen um es überall aufrufen zu können
