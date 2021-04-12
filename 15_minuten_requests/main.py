@@ -12,4 +12,10 @@ session = HTMLSession()
 url = "https://www.ebay-kleinanzeigen.de/s-suchanfrage.html?keywords=honda+nc+700"#&categoryId=&locationStr=91074 Herzogenaurach&locationId=6203&radius=0&sortingField=SORTING_DATE&adType=&posterType=&pageNum=1&action=find&maxPrice=&minPrice="
 
 er = session.get(url, headers=headers)
-print(er.text)
+artikel = er.html.find('article')
+for a in artikel:
+    print(a.attrs['data-href'])
+    print(a.html)
+    ## nach css class noch nix gefunden mal schauen ob ich es schaffe ;)
+    prize = a.html.find('.aditem-main--middle--price')
+    print(prize)
