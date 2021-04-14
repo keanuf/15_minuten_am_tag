@@ -13,9 +13,10 @@ url = "https://www.ebay-kleinanzeigen.de/s-suchanfrage.html?keywords=honda+nc+70
 
 er = session.get(url, headers=headers)
 artikel = er.html.find('article')
+
 for a in artikel:
     print(a.attrs['data-href'])
-    print(a.html)
+    #print(a.html)
     ## nach css class noch nix gefunden mal schauen ob ich es schaffe ;)
-    prize = a.html.find('.aditem-main--middle--price')
-    print(prize)
+    prize = a.find(".aditem-main--middle--price") # find nicht vom html objekt dann klappt es auch
+    print(prize[0].text)
